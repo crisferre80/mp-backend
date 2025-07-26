@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Instalar dependencias",
+      "type": "shell",
+      "command": "npm install",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Migrar base de datos Prisma",
+      "type": "shell",
+      "command": "npx prisma migrate dev --name init",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Iniciar servidor (dev)",
+      "type": "shell",
+      "command": "npm run dev",
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
