@@ -1,3 +1,4 @@
+
 import express from 'express';
 import cors from 'cors';
 import userRouter from './users.js';
@@ -5,7 +6,13 @@ import courseRouter from './products.js';
 import orderRouter from './orders.js';
 
 const app = express();
-app.use(cors());
+// Habilitar CORS para frontend local y producción
+app.use(cors({
+  origin: [
+    'http://localhost:5174',
+    'https://aulavirtualasura.netlify.app'
+  ]
+}));
 app.use(express.json());
 
 app.use('/api/users', userRouter);
